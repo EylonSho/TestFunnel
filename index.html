@@ -4,20 +4,21 @@
   <title>Open Link in Chrome</title>
 </head>
 <body>
-  <button onclick="openInChrome('https://www.example.com')">Open Link in Chrome</button>
+  <button onclick="openInChrome()">Open Link in Chrome</button>
 
   <script>
-    function openInChrome(url) {
+    const fallback_url = 'http://campaignsai.com';
+    function openInChrome() {
       // Check if the Chrome browser is available
       if (window.navigator.userAgent.indexOf("Chrome") > -1 || window.navigator.userAgent.indexOf("CriOS") > -1) {
         // Create the intent URL with the provided URL
-        var intentUrl = "intent://campaignsai.com/join/abc/#Intent;scheme=https;package=com.android.browser;S.browser_fallback_url=" + encodeURIComponent(url) + ";end";
+        var intentUrl = "intent://campaignsai.com/join/abc/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(fallback_url) + ";end";
         
         // Try to open the link in Chrome using the intent URL
         window.location.href = intentUrl;
       } else {
         // If Chrome is not available, open the link in a new tab
-        window.open(url, "_blank");
+        window.open(fallback_url, "_blank");
       }
     }
   </script>
