@@ -10,18 +10,18 @@
     const fallbackUrl = 'http://campaignsai.com';
     function openInChrome() {
       // Check if the Chrome browser is available
-      if (true){//window.navigator.userAgent.indexOf("Chrome") > -1 || window.navigator.userAgent.indexOf("CriOS") > -1) {
+//       if (true){//window.navigator.userAgent.indexOf("Chrome") > -1 || window.navigator.userAgent.indexOf("CriOS") > -1) {
         // Create the intent URL with the provided URL
 //         var intentUrlSamsung = "intent://campaignsai.com/join/abc/#Intent;scheme=https;package=com.sec.android.app.sbrowser;S.browser_fallback_url=" + encodeURIComponent(fallbackUrl) + ";end";
 
         var intentUrlChrome = "intent://campaignsai.com/join/abc/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(fallbackUrl) + ";end";
-        alert(1);
+//         alert(1);
         // Try to open the link in Chrome using the intent URL
         window.location.href = intentUrlChrome;
-      } else {
+//       } else {
         // If Chrome is not available, open the link in a new tab
-        window.open(fallbackUrl, "_blank");
-      }
+//         window.open(fallbackUrl, "_blank");
+//       }
     }
   </script>
 </body>
