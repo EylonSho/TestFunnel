@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Launch App from Web</title>
@@ -20,10 +20,37 @@
     }
     
     function launchAppOnAndroidDevice() {
-      const url = "intent://#Intent;package=com.google.android.apps.meetings;scheme=intent;end";// "intent://chromecast.com/#Intent;scheme=comgooglecast;package=com.google.android.apps.chromecast.app;end";
+      const url =  "intent://chromecast.com/#Intent;scheme=comgooglecast;package=com.android.chrome;end";
       window.location.replace(url);
     }
   </script>
 </body>
 </html>
 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open Link in Chrome</title>
+</head>
+<body>
+  <button onclick="openInChrome('https://www.example.com')">Open Link in Chrome</button>
+
+  <script>
+    function openInChrome(url) {
+      // Check if the Chrome browser is available
+      if (window.navigator.userAgent.indexOf("Chrome") > -1 || window.navigator.userAgent.indexOf("CriOS") > -1) {
+        // Create the intent URL with the provided URL
+        var intentUrl = "intent://open/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(url) + ";end";
+        
+        // Try to open the link in Chrome using the intent URL
+        window.location.href = intentUrl;
+      } else {
+        // If Chrome is not available, open the link in a new tab
+        window.open(url, "_blank");
+      }
+    }
+  </script>
+</body>
+</html>
