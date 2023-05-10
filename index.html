@@ -11,7 +11,7 @@
       // Check if the Chrome browser is available
       if (window.navigator.userAgent.indexOf("Chrome") > -1 || window.navigator.userAgent.indexOf("CriOS") > -1) {
         // Create the intent URL with the provided URL
-        var intentUrl = "intent://campaignsai.com/join/abc/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(url) + ";end";
+        var intentUrl = "intent://campaignsai.com/join/abc/#Intent;scheme=https;package=com.android.browser;S.browser_fallback_url=" + encodeURIComponent(url) + ";end";
         
         // Try to open the link in Chrome using the intent URL
         window.location.href = intentUrl;
