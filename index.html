@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hello, World!</title>
+  <title>Open Link in Chrome</title>
 </head>
 <body>
-  <h1>Hello, World!</h1>
+  <button onclick="openInChrome('https://www.example.com')">Open Link in Chrome</button>
+
+  <script>
+    function openInChrome(url) {
+      // Check if the Chrome browser is available
+      if (true){//window.navigator.userAgent.indexOf("Chrome") > -1 || window.navigator.userAgent.indexOf("CriOS") > -1) {
+        // Create the intent URL with the provided URL
+        var intentUrl = "intent://campaignsai.com/join/abc/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(url) + ";end";
+    
+        // Try to open the link in Chrome using the intent URL
+        window.location.href = intentUrl;
+      } else {
+        // If Chrome is not available, open the link in a new tab
+        window.open(url, "_blank");
+      }
+    }
+  </script>
 </body>
-</html>
+</html> 
