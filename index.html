@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Open Link in Browser Dialog</title>
+  <title>Open Link in Chrome</title>
 </head>
 <body>
-  <button onclick="openWithBrowserDialog()">Open Link in Browser Dialog</button>
+  <button onclick="openInChrome('https://www.example.com')">Open Link in Chrome</button>
 
   <script>
-    function openWithBrowserDialog() {
-      var url = 'campaignsai.com/join/asf'; // Replace with your desired link
-
-      // Check if the user is using an Android device
-      var isAndroid = /(android)/i.test(navigator.userAgent);
-
-      if (isAndroid) {
-        var intentUrl = 'intent://'+ url +'#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=org.chromium.chrome;end;';
+    function openInChrome(url) {
+      // Check if the Chrome browser is available
+      if (window.navigator.userAgent.indexOf("Chrome") > -1 || window.navigator.userAgent.indexOf("CriOS") > -1) {
+        // Create the intent URL with the provided URL
+        var intentUrl = "intent://campaignsai.com/join/abc/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(url) + ";end";
+        
+        // Try to open the link in Chrome using the intent URL
         window.location.href = intentUrl;
       } else {
-        // Display a message if the user is not on an Android device
-        alert('This feature is only available on Android devices.');
+        // If Chrome is not available, open the link in a new tab
+        window.open(url, "_blank");
       }
     }
   </script>
