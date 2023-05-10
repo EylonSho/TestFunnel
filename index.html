@@ -28,7 +28,7 @@
 </html>
 
  -->
-<!-- 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,30 +53,6 @@
     }
   </script>
 </body>
-</html>
- -->
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Open Link in Samsung Internet</title>
-</head>
-<body>
-  <button onclick="openInSamsungInternet('https://campaignsai.com/join/abcd')">Open Link in Samsung Internet</button>
+</html> 
 
-  <script>
-    function openInSamsungInternet(url) {
-      // Check if the Samsung Internet browser is available
-      if (true){//window.navigator.userAgent.indexOf("SamsungBrowser") > -1) {
-        // Create the intent URL with the provided URL
-        var intentUrl = "intent://" + url.replace(/^https?:\/\//i, '') + "#Intent;package=com.sec.android.app.sbrowser;end";
-        
-        // Try to open the link in Samsung Internet using the intent URL
-        window.location.href = intentUrl;
-      } else {
-        // If Samsung Internet is not available, open the link in a new tab
-        window.open(url, "_blank");
-      }
-    }
-  </script>
-</body>
-</html>
+
