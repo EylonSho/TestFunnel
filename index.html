@@ -66,7 +66,7 @@
   <script>
     function openInSamsungInternet(url) {
       // Check if the Samsung Internet browser is available
-      if (window.navigator.userAgent.indexOf("SamsungBrowser") > -1) {
+      if (true){//window.navigator.userAgent.indexOf("SamsungBrowser") > -1) {
         // Create the intent URL with the provided URL
         var intentUrl = "intent://" + url.replace(/^https?:\/\//i, '') + "#Intent;package=com.sec.android.app.sbrowser;end";
         
