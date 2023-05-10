@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Launch App from Web</title>
@@ -21,6 +21,46 @@
     
     function launchAppOnAndroidDevice() {
       const url = "intent://chromecast.com/#Intent;scheme=comgooglecast;package=com.google.android.apps.chromecast.app;end";
+      window.location.replace(url);
+    }
+  </script>
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Launch App from Web</title>
+</head>
+<body>
+  <h1>How to launch any mobile app from the web</h1>
+  <p>Ian Spryn</p>
+  
+  <h2>iOS</h2>
+  <p>Instructions for launching the app on iOS:</p>
+  <ol>
+    <!-- iOS instructions here -->
+  </ol>
+
+  <h2>Android</h2>
+  <p>Instructions for launching the app on Android:</p>
+  <ol>
+    <!-- Android instructions here -->
+  </ol>
+  
+  <h2>Launch Button</h2>
+  <button onclick="launchAppOnAppleDevice()">Launch App (iOS)</button>
+  <button onclick="launchAppOnAndroidDevice()">Launch App (Android)</button>
+  
+  <script>
+    function launchAppOnAppleDevice() {
+      const url = "browser://";  // Replace "googlehome://" with "browser://"
+      window.location.replace(url);
+    }
+    
+    function launchAppOnAndroidDevice() {
+      const url = "intent://example.com/#Intent;scheme=http;package=com.android.chrome;end";  // Replace the values with the desired URL
       window.location.replace(url);
     }
   </script>
